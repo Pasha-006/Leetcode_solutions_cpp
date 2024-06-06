@@ -9,9 +9,9 @@ public:
         {
             freq[hand[i]]+=1;
         }
-       
+    b   
         while(freq.size()!=0)
-        {
+        {b
             int key=freq.begin()->first;
            for(int i=key;i<groupSize+key;i++)
            {
