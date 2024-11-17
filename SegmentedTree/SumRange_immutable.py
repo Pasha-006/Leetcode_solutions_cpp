@@ -2,7 +2,6 @@
 
 
 class NumArray:
-
     def __init__(self, nums: List[int]):
         self.segmented_tree=[]
         for i in range(0,len(nums)*4):
@@ -10,9 +9,6 @@ class NumArray:
         self.build(nums,0,len(nums)-1,0)
         self.size=len(nums)-1
         print(self.segmented_tree)
-        
-
-
     def build(self,nums,intialStart,intialEnd,currIndex):
         if intialStart==intialEnd:
             self.segmented_tree[currIndex]=nums[intialStart]
@@ -20,9 +16,6 @@ class NumArray:
         mid=(intialStart+intialEnd)//2
         self.segmented_tree[currIndex]=self.build(nums,intialStart,mid,currIndex*2+1)+self.build(nums,mid+1,intialEnd,currIndex*2+2) 
         return self.segmented_tree[currIndex]
-
-
-
     def sum_range(self,currIndex,start,end,left,right):
         if left<=start and right>=end:
             return self.segmented_tree[currIndex]
