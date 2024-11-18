@@ -1,3 +1,5 @@
+#https://leetcode.com/problems/range-frequency-queries/description/?envType=problem-list-v2&envId=segment-tree
+
 
 from collections import Counter
 class RangeFreqQuery:
