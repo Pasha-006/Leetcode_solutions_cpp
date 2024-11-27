@@ -1,3 +1,5 @@
+
+#fidning max in the givne range
 class SegmentTree:
     def __init__(self,nums):
         self.segtree=[]
