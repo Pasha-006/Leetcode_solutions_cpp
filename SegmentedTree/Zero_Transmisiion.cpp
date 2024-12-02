@@ -77,12 +77,9 @@ public:
             std::cout<<currMax<<std::endl; 
            if(currMax>0)
             {
-               
                 for(int i=start;i<=end;i++)
                 {
                     s.updateSegtree(0,nums.size()-1,0,i,nums);
-                    
-
                 }
                
             }
