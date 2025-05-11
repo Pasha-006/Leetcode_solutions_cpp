@@ -1,6 +1,10 @@
+#include<iostream>
+#include<vector>
+#include<utility>
+
 class MyCalendar {
 private: 
-     std::vector<pair<int,int>> calendar;
+     std::vector<std::pair<int,int>> calendar;
 public:
     MyCalendar() {
         
@@ -15,7 +19,7 @@ public:
             }
           
         }
-        calendar.emplace_back(pair(startTime,endTime));
+        calendar.emplace_back(std::pair(startTime,endTime));
         return true;
 
         

@@ -1,3 +1,5 @@
+
+#fidning max in the givne range
 class SegmentTree:
     def __init__(self,nums):
         self.segtree=[]
@@ -23,17 +25,7 @@ class SegmentTree:
         mid=(segStart+segEnd)//2
         return max(self.max_In_Range(segStart,mid,left,right,currIndex*2+1),self.max_In_Range(mid+1,segEnd,left,right,currIndex*2+2))
 
-    def update_array(self,segStart,segEnd,index,currIndex,val,nums):
-        if segStart==segEnd:
-            nums[index]=val
-            self.segtree[currIndex]=val
-            return 
-        mid=(segStart+segEnd)//2 
-        if index>=segStart and index<=mid:
-            self.update_array(segStart,mid,index,currIndex*2+1,val,nums)
-        else: 
-            self.update_array(mid+1,segEnd,index,currIndex*2+2,val,nums)
-        self.segtree[currIndex]=max(self.segtree[currIndex*2+1],self.segtree[currIndex*2+2])
+    
 
 
             
@@ -41,7 +33,6 @@ class SegmentTree:
 class Solution: 
     def solve(self,nums,left,right):
         sgTree=SegmentTree(nums) 
-        sgTree.update_array(0,len(nums)-1,2,0,20,nums)
         return sgTree.max_In_Range(0,len(nums)-1,left,right,0); 
 if __name__=="__main__":
     s=Solution() 
