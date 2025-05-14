@@ -14,7 +14,7 @@ class TreeNode
 };
 TreeNode* successor(TreeNode * root)
 {
-    if(root==nullptr || (root->left==nullptr && root->right==nullptr))
+    if(root==nullptr || (root->left==nullptr))
     {
         return root;
 
@@ -24,6 +24,10 @@ TreeNode* successor(TreeNode * root)
 
 TreeNode * delNode(TreeNode * root,int key)
 {
+    if(root==nullptr)
+    {
+        return nullptr;
+    }
     if(root->val<key)
     {
         root->right=delNode(root->right,key);
@@ -83,7 +87,7 @@ int main()
     root->left=new TreeNode(4);
     root->right=new TreeNode(12);
     root->right->left=new TreeNode(11);
-    TreeNode * curr=delNode(root,4);
+    TreeNode * curr=delNode(root,100);
     
     traverse(curr);
     
